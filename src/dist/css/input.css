@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  * {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+.navbar-fixed {
+  @apply fixed z-[9999] bg-white bg-opacity-70 backdrop-blur-sm;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
+}
+
+.haburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #0d9488;
+}
+
+.header .header-box .box h1 {
+  line-height: 1.5;
+  --animate-delay: 0.7s;
+}
+.header .header-box .box p {
+  line-height: 2;
+  --animate-delay: 1s;
+}
+
+.header .header-box .box button {
+  --animate-delay: 1.3s;
+}
+
+.header .header-box .box img {
+  --animate-delay: 0.4s;
+}
+
+.about .about-box .box p {
+  line-height: 2;
+}
+
+.service .service-box .box:nth-child(1) p {
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-origin: top;
+  }
+  .menu-active {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fa-circle-arrow-up.btn-active {
+  display: block;
+}
